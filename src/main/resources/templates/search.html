@@ -37,6 +37,8 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <h3 th:unless="${jobs} and ${jobs.size()}">0 Result(s)</h3>
+    <div th:if="${jobs} and ${jobs.size()}" th:replace="fragments :: display-results" class="container body-content"></div>
 
 </div>
 

@@ -27,5 +27,18 @@
         </div>
     </div>
 
+    <div th:fragment="display-results" th:if="${jobs} and ${jobs.size()}" class="container body-content">
+        <h3 th:text="${jobs.size() + ' Result(s)'}">0 Result(s)</h3>
+        <div th:if="${jobs} and ${jobs.size()}">
+            <p th:each="job : ${jobs}">
+            <table class="job-listing">
+                <tr th:each="mapItem : ${job}">
+                    <td th:text="${#strings.capitalizeWords(mapItem.key)}"></td><td th:text="${mapItem.value}"></td>
+                </tr>
+            </table>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>

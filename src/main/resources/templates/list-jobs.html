@@ -11,6 +11,8 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #3 - Use the same list display from search.html -->
+    <!-- The below code contains "jobs" arraylist which contains a hashmap of string values-->
+    <div th:replace="fragments :: display-results"></div>
 
 </div>
 
